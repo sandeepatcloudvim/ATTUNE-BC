@@ -1,0 +1,26 @@
+{
+  "id": "f70f4fb5-5635-4497-99c1-1bf143e0e3ea",
+  "name": "Attune Extension BC17",
+  "publisher": "CBR Technology",
+  "version": "17.0.0.17",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://AttuneExtensionBC17.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

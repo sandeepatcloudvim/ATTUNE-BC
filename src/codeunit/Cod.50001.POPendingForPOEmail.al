@@ -15,15 +15,15 @@ codeunit 50001 POPendingConfirmationEmail
         PurchaseHeader.SETRANGE("Document Type", PurchaseHeader."Document Type"::Order);
         PurchaseHeader.SETRANGE(Status, PurchaseHeader.Status::Released);
         PurchaseHeader.SETFILTER("Vendor Order No.", '%1', '');
-        IF PurchaseHeader.FINDFIRST THEN
+        IF PurchaseHeader.FINDFIRST THEN begin
             REPEAT
                 SMTPMail.AppendBody('<tr><td>' + PurchaseHeader."No." + '</td><td>' + PurchaseHeader."Buy-from Vendor Name" + '</td><td>' + FORMAT(PurchaseHeader."Order Date") + '</td></tr>');
             UNTIL PurchaseHeader.NEXT = 0;
-
-        SMTPMail.Send;
-        CLEAR(SMTPMail);
-        Message('Done');
-
+            SMTPMail.Send;
+            CLEAR(SMTPMail);
+            if GuiAllowed then
+                Message('Email sent sucessfully');
+        end;
 
     end;
 
